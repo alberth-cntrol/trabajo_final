@@ -1,5 +1,4 @@
 import { useAuth } from "../context/AuthContext";
-import Show from "./Show";
 import { Link, useNavigate } from "react-router-dom";
 
 export function Home() {
@@ -29,15 +28,9 @@ export function Home() {
         <br></br>
         <center><button 
           className="bg-slate-200 hover:bg-slate-300 rounded py-2 px-4 text-black">
-            <Link to="/mostrar" className="text-blue-700 hover:text-blue-900">
-              Ver Cerraduras
+            <Link to="/mostrar">
+              Ver Registro
             </Link>
-        </button></center>
-        
-        <br></br>
-        <center><button href="/"
-          className="bg-slate-200 hover:bg-slate-300 rounded py-2 px-4 text-black">
-            Ver Registro
         </button></center>
       </div>
       
