@@ -86,7 +86,7 @@ export function Header() {
                     <div>
                         <button
                             className="bg-slate-200 hover:bg-slate-300 rounded py-2 px-4 text-black" style={{backgroundColor:'#e07924'}}>
-                            <Link to="/mostrar" style={{ textDecoration: 'none', color: '#fff' }} >
+                            <Link to="/mostrar" style={{ textDecoration: 'none', color: '#fff' }} onClick="location.reload()">
                                 Ver Registro
                             </Link>
                         </button>
