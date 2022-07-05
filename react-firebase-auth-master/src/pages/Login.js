@@ -1,9 +1,21 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import { Alert } from "./Alert";
+import { Alert } from "../components/Alert";
+import { makeStyles } from '@material-ui/core/styles';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    minHeight: '100vh',
+    backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/funciona.jpg'})`,
+
+
+    //backgroundColor: '#23394d',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
+  }
+}));
 export function Login() {
   const [user, setUser] = useState({
     email: "",
@@ -46,9 +58,10 @@ export function Login() {
       setError(error.message);
     }
   };
+  const classes = useStyles();
+
 
   return (
-
     <div className="">
       {error && <Alert message={error} />}
 
@@ -145,5 +158,6 @@ export function Login() {
       </section>
 
     </div>
+
   );
 }

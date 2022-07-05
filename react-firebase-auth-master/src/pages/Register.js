@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import { Alert } from "./Alert";
+import { Alert } from "../components/Alert";
 export function Register() {
   const { signup } = useAuth();
 
@@ -63,7 +63,7 @@ export function Register() {
         </div>
 
         <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-          Register
+          Registro
         </button>
       </form>
       <p className="my-4 text-sm flex justify-between px-3">

@@ -1,11 +1,11 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { Login } from "./components/Login";
-import { Register } from "./components/Register";
-import { Mostrar } from "./components/Mostrar";
-import { Perfil } from "./components/Perfil";
+import { Login } from "./pages/Login";
+import { Register } from "./pages/Register";
+import { Mostrar } from "./pages/Mostrar";
+import { Perfil } from "./pages/Perfil";
 
-import { Home } from "./components/Home";
+import { Home } from "./pages/Home";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 
 import { AuthProvider } from "./context/AuthContext";

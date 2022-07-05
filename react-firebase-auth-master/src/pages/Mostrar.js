@@ -5,7 +5,7 @@ import { useAuth } from "../context/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Carousel } from 'bootstrap';
-import Navbar from './Navbar/Navbar';
+import Navbar from '../components/Navbar/Navbar';
 export function Mostrar() {
   const [series, setSeries] = useState([]);
   const [pos, setPos] = useState(null);
