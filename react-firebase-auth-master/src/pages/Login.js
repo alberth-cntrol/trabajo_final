@@ -62,7 +62,7 @@ export function Login() {
 
 
   return (
-    <div className="">
+    <div>
       {error && <Alert message={error} />}
 
       <section className="vh-100">
