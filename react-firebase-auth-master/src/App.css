@@ -12,6 +12,12 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+.title {
+  color: #738f93;
+  font-size: 40px;
+  font-family: fantasy, sans-serif;
+  margin-bottom: 0;
+}
 
 .App-header {
   background-color: #282c34;
@@ -35,4 +41,15 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.navbarclass{
+  height: 100%;
+  @media screen and (max-width: 960px) {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: ce;
+  align-items: center;
+}
 }

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { Alert } from "./Alert";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export function Login() {
   const [user, setUser] = useState({
@@ -47,74 +48,102 @@ export function Login() {
   };
 
   return (
-    <div className="w-full max-w-xs m-auto">
+
+    <div className="">
       {error && <Alert message={error} />}
 
-      <form
-        onSubmit={handleSubmit}
-        className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
-      >
-        <div className="mb-4">
-          <label
-            htmlFor="email"
-            className="block text-gray-700 text-sm font-bold mb-2"
-          >
-            Correo
-          </label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            onChange={handleChange}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            placeholder="correo@gmail.com"
-          />
-        </div>
-        <div className="mb-4">
-          <label
-            htmlFor="password"
-            className="block text-gray-700 text-sm font-bold mb-2"
-          >
-            Contraseña
-          </label>
-          <input
-            type="password"
-            name="password"
-            id="password"
-            onChange={handleChange}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            placeholder="******"
-          />
+      <section className="vh-100">
+        <div className="container py-5 h-100">
+          {/* parte de imagen */}
+          <div className="row d-flex align-items-center justify-content-center h-100">
+            <div className="col-md-8 col-lg-7 col-xl-6">
+              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
+                class="img-fluid" alt="Phone image"></img>
+            </div>
+            {/* parte de formulario */}
+            <div className="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+              <h3>Digital locked</h3>
+              <hr></hr>
+              <form onSubmit={handleSubmit}>
+                {/* Inicio de correo */}
+                <div className="form-outline mb-4">
+                  <label
+                    htmlFor="email"
+                    className="form-label">
+                    Correo
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    onChange={handleChange}
+                    className="form-control form-control-lg"
+                    placeholder="correo@gmail.com"
+                  />
+                </div>
+                {/* Fin de correo */}
+
+                {/* Inicio de password */}
+                <div className="form-outline mb-4">
+                  <label
+                    htmlFor="password"
+                    className="form-label"
+                  >
+                    Contraseña
+                  </label>
+                  <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    onChange={handleChange}
+                    className="form-control form-control-lg"
+                    placeholder="*********"
+                  />
+                </div>
+                {/* Fin de password */}
+
+                {/* Inicio de botones */}
+                <div className="flex items-center justify-between">
+                  <button
+                    className="btn btn-primary d-grid gap-2 col-6 mx-auto btn-lg "
+                    type="submit"
+                  >
+                    Iniciar Sesion
+                  </button>
+                </div>
+                <br></br>
+                <div className="flex items-center justify-between">
+                  <button
+                    onClick={handleGoogleSignin}
+                    className="btn btn-danger d-grid gap-2 col-6 mx-auto btn-lg"
+                  >
+                    Google login
+                  </button>
+                </div>
+                <br></br>
+                <a
+                  className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"
+                  href="#!"
+                  onClick={handleResetPassword}
+                >
+                  ¿Olvidaste tu contraseña?
+                </a>
+
+                <p className="my-4 text -sm flex ">
+                  ¿No tienes cuenta?.
+                  <Link to="/register" className="text-blue-700 hover:text-blue-900">
+                    Registrarse
+                  </Link>
+                </p>
+              </form>
+            </div>
+
+          </div>
+
         </div>
 
-        <div className="flex items-center justify-between">
-          <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            type="submit"
-          >
-            Iniciar Sesion
-          </button>
-          <a
-            className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"
-            href="#!"
-            onClick={handleResetPassword}
-          >
-            forgot password?
-          </a>
-        </div>
-      </form>
-      <button
-        onClick={handleGoogleSignin}
-        className="bg-slate-50 hover:bg-slate-200 text-black  shadow rounded border-2 border-gray-300 py-2 px-4 w-full"
-      >
-        Google login
-      </button>
-      <p className="my-4 text-sm flex justify-between px-3">
-        No tienes cuenta?
-        <Link to="/register" className="text-blue-700 hover:text-blue-900">
-          Registrarse
-        </Link>
-      </p>
+      </section>
+
     </div>
   );
 }
